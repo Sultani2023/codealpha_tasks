@@ -4,519 +4,472 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/components/header/header.js" defer></script>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+
   <title>Explore Afghanistan's Provinces</title>
-  <style>
-    /* 🌟 Base Reset & Font */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Poppins", sans-serif;
-    }
 
-    body {
-       background-color: #f0f3f5; 
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* 🌍 Navbar */
-    nav {
-      background-color: #2c3e50;
-      color: white;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    nav h1 {
-      font-size: 1.6rem;
-      font-weight: 600;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 1.5rem;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
-
-    nav ul li a:hover {
-      color: #ffca28;
-    }
-
-    /* 🖼️ Gallery Section */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 2rem;
-      padding: 2rem;
-      flex: 1;
-    }
-
-    /* Flip Card Style */
-    .flip-card {
-      background-color: transparent;
-      width: 100%;
-      height: 250px;
-      perspective: 1000px;
-      cursor: pointer;
-    }
-
-    .flip-card-inner {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      transition: transform 0.8s;
-      transform-style: preserve-3d;
-    }
-
-    .flip-card:hover .flip-card-inner {
-      transform: rotateY(180deg);
-    }
-
-    .flip-card-front,
-    .flip-card-back {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      border-radius: 16px;
-      backface-visibility: hidden;
-      overflow: hidden;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .flip-card-front img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.5s ease, filter 0.5s ease;
-      filter: brightness(90%);
-      border-radius: 16px;
-    }
-
-    .flip-card:hover img {
-      transform: scale(1.05);
-      filter: brightness(100%);
-    }
-
-    .flip-card-back {
-       background: linear-gradient(135deg, #2c3e50, #27ae60,#C79F7B);
-      color: white;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 1rem;
-      font-size: 0.95rem;
-      line-height: 1.5;
-      transform: rotateY(180deg);
-      border-radius: 16px;
-    }
-
-    .flip-card-back h2 {
-      margin-bottom: 0.5rem;
-    }
-
-    /* 🦶 Footer */
-    footer {
-      background-color: #2c3e50;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-    }
-
-    footer a {
-      color: #ffca28;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* 📱 Responsive */
-    @media (max-width: 768px) {
-      .flip-card {
-        height: 200px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .flip-card {
-        height: 180px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <!-- 🌍 Navbar -->
-  <nav>
-    <h1>Explore Afghanistan</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Provinces</a></li>
-      <li><a href="#">Culture</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-  </nav>
+  <!-- Navbar -->
+  <header-component></header-component>
 
-  <!-- 🖼️ Gallery Section -->
+  <!--  Gallery Section -->
   <div class="gallery">
     <!-- Flip cards for 34 provinces -->
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="image/kabul.jpg" alt="Kabul"></div>
-        <div class="flip-card-back">
-          <h2>Kabul</h2>
-          <p>Capital city combining modern life with rich historical culture.</p>
+    <a href="provinces/kabulSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="image/kabul.jpg" alt="Kabul">
+          </div>
+          <div class="flip-card-back">
+            <h2>Kabul</h2>
+            <p>Capital city combining modern life with rich historical culture.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://pajhwok.com/wp-content/uploads/2019/06/48042644463_0b197cfdf4.jpg" alt="Herat"></div>
-        <div class="flip-card-back">
-          <h2>Herat</h2>
-          <p>Famous for Persian architecture, ancient citadel, and rich culture.</p>
+    <a href="provinces/heratSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://pajhwok.com/wp-content/uploads/2019/06/48042644463_0b197cfdf4.jpg" alt="Herat"></div>
+          <div class="flip-card-back">
+            <h2>Herat</h2>
+            <p>Famous for Persian architecture, ancient citadel, and rich culture.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1102/362840/1000w_q95.jpg" alt="Kandahar"></div>
-        <div class="flip-card-back">
-          <h2>Kandahar</h2>
-          <p>Heart of Pashtun culture, famous for fruits, shrines, and bazaars.</p>
+    <a href="provinces/kandaharSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://d1ldvf68ux039x.cloudfront.net/thumbs/photos/1102/362840/1000w_q95.jpg" alt="Kandahar"></div>
+          <div class="flip-card-back">
+            <h2>Kandahar</h2>
+            <p>Heart of Pashtun culture, famous for fruits, shrines, and bazaars.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="image/bamyan.jpg" alt="Bamyan"></div>
-        <div class="flip-card-back">
-          <h2>Bamyan</h2>
-          <p>Home of the ancient Buddha statues and stunning natural landscapes.</p>
+    </a>
+    <a href="provinces/bamyanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="image/bamyan.jpg" alt="Bamyan"></div>
+          <div class="flip-card-back">
+            <h2>Bamyan</h2>
+            <p>Home of the ancient Buddha statues and stunning natural landscapes.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://amu.tv/wp-content/uploads/2024/05/16291290_459-1024x576.jpg" alt="Badakhshan"></div>
-        <div class="flip-card-back">
-          <h2>Badakhshan</h2>
-          <p>Mountainous region famous for Pamir Mountains and lapis lazuli mines.</p>
+    <a href="provinces/badakhshanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://amu.tv/wp-content/uploads/2024/05/16291290_459-1024x576.jpg"
+              alt="Badakhshan"></div>
+          <div class="flip-card-back">
+            <h2>Badakhshan</h2>
+            <p>Mountainous region famous for Pamir Mountains and lapis lazuli mines.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://www.ariananews.af/wp-content/uploads/2021/07/Badghis-1.jpg" alt="Badghis"></div>
-        <div class="flip-card-back">
-          <h2>Badghis</h2>
-          <p>Known for rolling hills, carpets, and beautiful landscapes.</p>
+    </a>
+    <a href="provinces/BadghisSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://www.ariananews.af/wp-content/uploads/2021/07/Badghis-1.jpg"
+              alt="Badghis"></div>
+          <div class="flip-card-back">
+            <h2>Badghis</h2>
+            <p>Known for rolling hills, carpets, and beautiful landscapes.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/94001499_2857718344336361_6360889167156609024_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fK8ecdawgzkQ7kNvwGZa4QA&_nc_oc=AdkWF7x1mnQIQqb2eX6QPllpo-mQm_3eijyGE_vupMh6DN9qmYI2R9NFZgrTblkyhg4&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=GXbq4v6ShfDS6IyTUho-ig&oh=00_Afe5N94_yWC0vELoq3y57nFxAkMGD1UqExcJVwqpK9u-aQ&oe=690CC7C2" alt="Baghlan"></div>
-        <div class="flip-card-back">
-          <h2>Baghlan</h2>
-          <p>Green valleys, sugar factories, and a mix of industry with nature.</p>
+    <a href="provinces/BaghlanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/94001499_2857718344336361_6360889167156609024_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=fK8ecdawgzkQ7kNvwGZa4QA&_nc_oc=AdkWF7x1mnQIQqb2eX6QPllpo-mQm_3eijyGE_vupMh6DN9qmYI2R9NFZgrTblkyhg4&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=GXbq4v6ShfDS6IyTUho-ig&oh=00_Afe5N94_yWC0vELoq3y57nFxAkMGD1UqExcJVwqpK9u-aQ&oe=690CC7C2"
+              alt="Baghlan"></div>
+          <div class="flip-card-back">
+            <h2>Baghlan</h2>
+            <p>Green valleys, sugar factories, and a mix of industry with nature.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://www.khaama.com/wp-content/uploads/2022/08/Balkh.jpg" alt="Balkh"></div>
-        <div class="flip-card-back">
-          <h2>Balkh</h2>
-          <p>Known as the 'Mother of Cities', ancient city rich in Islamic learning and poetry.</p>
+    <a href="provinces/balkhSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://www.khaama.com/wp-content/uploads/2022/08/Balkh.jpg"
+              alt="Balkh">
+          </div>
+          <div class="flip-card-back">
+            <h2>Balkh</h2>
+            <p>Known as the 'Mother of Cities', ancient city rich in Islamic learning and poetry.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://pajhwok.com/wp-content/uploads/2025/07/Daikundi-1024x575.jpg" alt="Daikundi"></div>
-        <div class="flip-card-back">
-          <h2>Daikundi</h2>
-          <p>Peaceful mountainous province known for almonds and literacy.</p>
+    <a href="provinces/daikundiSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://pajhwok.com/wp-content/uploads/2025/07/Daikundi-1024x575.jpg"
+              alt="Daikundi"></div>
+          <div class="flip-card-back">
+            <h2>Daikundi</h2>
+            <p>Peaceful mountainous province known for almonds and literacy.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://pajhwok.com/wp-content/uploads/2019/12/49303267188_34373fc4f1_c.jpg" alt="Farah"></div>
-        <div class="flip-card-back">
-          <h2>Farah</h2>
-          <p>Desert beauty, ancient fortresses, and peaceful farming communities.</p>
+    <a href="provinces/farahSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://pajhwok.com/wp-content/uploads/2019/12/49303267188_34373fc4f1_c.jpg" alt="Farah"></div>
+          <div class="flip-card-back">
+            <h2>Farah</h2>
+            <p>Desert beauty, ancient fortresses, and peaceful farming communities.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://chiraghtv.org/wp-content/uploads/2025/09/483.jpg" alt="Faryab"></div>
-        <div class="flip-card-back">
-          <h2>Faryab</h2>
-          <p>Wide plains blending Uzbek and Turkmen cultures in festivals and music.</p>
+    </a>
+    <a href="provinces/faryabSubpage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://chiraghtv.org/wp-content/uploads/2025/09/483.jpg" alt="Faryab">
+          </div>
+          <div class="flip-card-back">
+            <h2>Faryab</h2>
+            <p>Wide plains blending Uzbek and Turkmen cultures in festivals and music.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://www.theglobetrottingdetective.com/wp-content/uploads/2025/02/ancient-sites-in-ghazni-afghanistan-travel-guide.jpg" alt="Ghazni"></div>
-        <div class="flip-card-back">
-          <h2>Ghazni</h2>
-          <p>Rich historical city with Islamic art, towers, and medieval glory.</p>
+    <a href="provinces/ghazniSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://www.theglobetrottingdetective.com/wp-content/uploads/2025/02/ancient-sites-in-ghazni-afghanistan-travel-guide.jpg"
+              alt="Ghazni"></div>
+          <div class="flip-card-back">
+            <h2>Ghazni</h2>
+            <p>Rich historical city with Islamic art, towers, and medieval glory.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="image/FireShot Capture 010 - Instagram - [www.instagram.com].png" alt="Ghor"></div>
-        <div class="flip-card-back">
-          <h2>Ghor</h2>
-          <p>Mountains hiding ancient castles; home of the Ghorid Empire.</p>
+    <a href="provinces/ghorSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="image/FireShot Capture 010 - Instagram - [www.instagram.com].png"
+              alt="Ghor"></div>
+          <div class="flip-card-back">
+            <h2>Ghor</h2>
+            <p>Mountains hiding ancient castles; home of the Ghorid Empire.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://elitedestinations-af.com/wp-content/uploads/2024/11/Helmand-Afghanistan-%F0%9F%87%A6%F0%9F%87%AB.png" alt="Helmand"></div>
-        <div class="flip-card-back">
-          <h2>Helmand</h2>
-          <p>Largest province, known for its river valleys and agricultural importance.</p>
+    </a>
+    <a href="provinces/helmandSubpage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://elitedestinations-af.com/wp-content/uploads/2024/11/Helmand-Afghanistan-%F0%9F%87%A6%F0%9F%87%AB.png"
+              alt="Helmand"></div>
+          <div class="flip-card-back">
+            <h2>Helmand</h2>
+            <p>Largest province, known for its river valleys and agricultural importance.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://thekabultimes.com/wp-content/uploads/2024/06/kapisa.png" alt="Kapisa"></div>
-        <div class="flip-card-back">
-          <h2>Kapisa</h2>
-          <p>Lush greenery and ancient Buddhist ruins, combining history and nature.</p>
+    <a href="provinces/kapisaSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://thekabultimes.com/wp-content/uploads/2024/06/kapisa.png"
+              alt="Kapisa"></div>
+          <div class="flip-card-back">
+            <h2>Kapisa</h2>
+            <p>Lush greenery and ancient Buddhist ruins, combining history and nature.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9PyJUokw0m1MLiWVszgb5fGUtirCBL_hRoA&s" alt="Khost"></div>
-        <div class="flip-card-back">
-          <h2>Khost</h2>
-          <p>Green province with vibrant markets and strong tribal customs.</p>
+    <a href="provinces/khostSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9PyJUokw0m1MLiWVszgb5fGUtirCBL_hRoA&s"
+              alt="Khost"></div>
+          <div class="flip-card-back">
+            <h2>Khost</h2>
+            <p>Green province with vibrant markets and strong tribal customs.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/518354630_1639908590208635_6945131967265645559_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=CrJMx2G8DRQQ7kNvwER40SK&_nc_oc=Adm1KGMW3Bz_J9l0hVjUgrwIbL7086yn743QmE0K2xLS2y06KSN-PW5uOV1yt3o0vas&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=s639p4eqiM48ARf0fEzL3w&oh=00_Afe-ayDOq-QZjbQK1fr5gbLlbQXCK2vWo6kqXsXmK8tezQ&oe=68EB3AF7" alt="Kunar"></div>
-        <div class="flip-card-back">
-          <h2>Kunar</h2>
-          <p>Full of forests, mountains, and rivers, known for natural beauty.</p>
+    <a href="provinces/kunarSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/518354630_1639908590208635_6945131967265645559_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=CrJMx2G8DRQQ7kNvwER40SK&_nc_oc=Adm1KGMW3Bz_J9l0hVjUgrwIbL7086yn743QmE0K2xLS2y06KSN-PW5uOV1yt3o0vas&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=s639p4eqiM48ARf0fEzL3w&oh=00_Afe-ayDOq-QZjbQK1fr5gbLlbQXCK2vWo6kqXsXmK8tezQ&oe=68EB3AF7"
+              alt="Kunar"></div>
+          <div class="flip-card-back">
+            <h2>Kunar</h2>
+            <p>Full of forests, mountains, and rivers, known for natural beauty.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://amu.tv/wp-content/uploads/2024/08/Kunduz-1024x576.jpg" alt="Kunduz"></div>
-        <div class="flip-card-back">
-          <h2>Kunduz</h2>
-          <p>Fertile lands and hardworking people, located on ancient trade routes.</p>
+    <a href="provinces/kunduzSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://amu.tv/wp-content/uploads/2024/08/Kunduz-1024x576.jpg"
+              alt="Kunduz"></div>
+          <div class="flip-card-back">
+            <h2>Kunduz</h2>
+            <p>Fertile lands and hardworking people, located on ancient trade routes.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://thekabultimes.com/wp-content/uploads/2023/06/laghman.png" alt="Laghman"></div>
-        <div class="flip-card-back">
-          <h2>Laghman</h2>
-          <p>Peaceful province full of rivers, orchards, and mountains.</p>
+    <a href="provinces/laghmanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://thekabultimes.com/wp-content/uploads/2023/06/laghman.png"
+              alt="Laghman"></div>
+          <div class="flip-card-back">
+            <h2>Laghman</h2>
+            <p>Peaceful province full of rivers, orchards, and mountains.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/104297759_2991573697617491_3051677114297527064_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iW9gKWOarXAQ7kNvwEJfj-6&_nc_oc=AdkMd3W0Yu416MSmJgMQQoE_IrA6crQ4i1JpF4rJtT0AVd3IdGtJWioWcdi9B1AZ8sg&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=jCFEeokQjw--tmq8TcuyJg&oh=00_Afcoy8K3Wnq3uBCFfsGwjLTIX6e2lEzJb6xi4fHeIT5moA&oe=690CD8A0" alt="Logar"></div>
-        <div class="flip-card-back">
-          <h2>Logar</h2>
-          <p>Scenic province near Kabul, famous for valleys and agriculture.</p>
+    <a href="provinces/logarSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/104297759_2991573697617491_3051677114297527064_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=127cfc&_nc_ohc=iW9gKWOarXAQ7kNvwEJfj-6&_nc_oc=AdkMd3W0Yu416MSmJgMQQoE_IrA6crQ4i1JpF4rJtT0AVd3IdGtJWioWcdi9B1AZ8sg&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=jCFEeokQjw--tmq8TcuyJg&oh=00_Afcoy8K3Wnq3uBCFfsGwjLTIX6e2lEzJb6xi4fHeIT5moA&oe=690CD8A0"
+              alt="Logar"></div>
+          <div class="flip-card-back">
+            <h2>Logar</h2>
+            <p>Scenic province near Kabul, famous for valleys and agriculture.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/485740729_1855656128594668_4311042669481312022_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=ur3gx0x7FogQ7kNvwFMJUP-&_nc_oc=AdkBQ_-sYIEZIJGQh2Rqt5Awar-AhnX2ZCD9KIEkaFGxlwLV3NiZd9E5DWZwb7FmiR0&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=pzvbY-3DGfe6zptt7Fi8VA&oh=00_AffVdP2xDair-YgyE5Nc668DMbXm8Vs-_031SkE4JOCliA&oe=68EB642E" alt="Nangarhar"></div>
-        <div class="flip-card-back">
-          <h2>Nangarhar</h2>
-          <p>Lush greenery, orange orchards, and historical Buddhist caves.</p>
+    <a href="provinces/nangarharSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/485740729_1855656128594668_4311042669481312022_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=aa7b47&_nc_ohc=ur3gx0x7FogQ7kNvwFMJUP-&_nc_oc=AdkBQ_-sYIEZIJGQh2Rqt5Awar-AhnX2ZCD9KIEkaFGxlwLV3NiZd9E5DWZwb7FmiR0&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=pzvbY-3DGfe6zptt7Fi8VA&oh=00_AffVdP2xDair-YgyE5Nc668DMbXm8Vs-_031SkE4JOCliA&oe=68EB642E"
+              alt="Nangarhar"></div>
+          <div class="flip-card-back">
+            <h2>Nangarhar</h2>
+            <p>Lush greenery, orange orchards, and historical Buddhist caves.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://thekabultimes.com/wp-content/uploads/2018/12/Nimroz-Saffron.jpg" alt="Nimroz"></div>
-        <div class="flip-card-back">
-          <h2>Nimroz</h2>
-          <p>Desert province connecting Afghanistan to Iran, with rich trade.</p>
+    <a href="provinces/nimrozSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://thekabultimes.com/wp-content/uploads/2018/12/Nimroz-Saffron.jpg" alt="Nimroz"></div>
+          <div class="flip-card-back">
+            <h2>Nimroz</h2>
+            <p>Desert province connecting Afghanistan to Iran, with rich trade.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/480945832_640681165379876_3812793202142719885_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=JavAiTIzNY4Q7kNvwHG_fj2&_nc_oc=AdmVXRjmeMtxyjPGXO63F1ya3QBjBEKmAIFGghEZY-9GKmY8roAat0noOTL4UfJGIlI&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=RiCQcBAw5vKm2nlZQSNhzA&oh=00_Afe1o57gRX47vlU5oVAwlzM__qPmZfsnqOWnvEBLkb-CJw&oe=68EB4F6A" alt="Nuristan"></div>
-        <div class="flip-card-back">
-          <h2>Nuristan</h2>
-          <p>Known as 'Land of Light', unique culture and untouched mountains.</p>
+    <a href="provinces/nuristanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t39.30808-6/480945832_640681165379876_3812793202142719885_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=JavAiTIzNY4Q7kNvwHG_fj2&_nc_oc=AdmVXRjmeMtxyjPGXO63F1ya3QBjBEKmAIFGghEZY-9GKmY8roAat0noOTL4UfJGIlI&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=RiCQcBAw5vKm2nlZQSNhzA&oh=00_Afe1o57gRX47vlU5oVAwlzM__qPmZfsnqOWnvEBLkb-CJw&oe=68EB4F6A"
+              alt="Nuristan"></div>
+          <div class="flip-card-back">
+            <h2>Nuristan</h2>
+            <p>Known as 'Land of Light', unique culture and untouched mountains.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/131692596_3504093866365469_5170653344618442183_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EN12Op8kKuYQ7kNvwGSoM_u&_nc_oc=Adk3c4fAGpX90vcJIcIRrKaKJE_j7Dy9HKWgjdPs_m-BhJm6I8Wr7uI6hXcYfuXUGO0&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=jj2Jm0U-XrPN4p0BEn5nug&oh=00_Afftzjt71W2-LEHLZi69hi86oHXwlk8ljchqoSkDqhZecQ&oe=690CF977" alt="Paktia"></div>
-        <div class="flip-card-back">
-          <h2>Paktia</h2>
-          <p>Beautiful valleys, ancient architecture, and hospitable tribes.</p>
+    <a href="provinces/paktiaSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/131692596_3504093866365469_5170653344618442183_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=EN12Op8kKuYQ7kNvwGSoM_u&_nc_oc=Adk3c4fAGpX90vcJIcIRrKaKJE_j7Dy9HKWgjdPs_m-BhJm6I8Wr7uI6hXcYfuXUGO0&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=jj2Jm0U-XrPN4p0BEn5nug&oh=00_Afftzjt71W2-LEHLZi69hi86oHXwlk8ljchqoSkDqhZecQ&oe=690CF977"
+              alt="Paktia"></div>
+          <div class="flip-card-back">
+            <h2>Paktia</h2>
+            <p>Beautiful valleys, ancient architecture, and hospitable tribes.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/94604932_2742514709179118_5208506771139723264_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=VOPexnNf3jsQ7kNvwE99hNu&_nc_oc=Adn2Gi_cZwiUU9sNa4-trT6_bM0SbFUVn9xxG3NUx45cT1xZBC1_cbWWKwqdIhH7m00&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=JBhvCgrUuQ0_pne2TxRpGw&oh=00_AfdwAbcT8EGoVkEr4vTwaS3wQz1bYNZ-fJvqpHypUDlIWw&oe=690CFEB5" alt="Paktika"></div>
-        <div class="flip-card-back">
-          <h2>Paktika</h2>
-          <p>Mountainous and scenic province near Pakistan border.</p>
+    <a href="provinces/paktikaSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/94604932_2742514709179118_5208506771139723264_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=127cfc&_nc_ohc=VOPexnNf3jsQ7kNvwE99hNu&_nc_oc=Adn2Gi_cZwiUU9sNa4-trT6_bM0SbFUVn9xxG3NUx45cT1xZBC1_cbWWKwqdIhH7m00&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=JBhvCgrUuQ0_pne2TxRpGw&oh=00_AfdwAbcT8EGoVkEr4vTwaS3wQz1bYNZ-fJvqpHypUDlIWw&oe=690CFEB5"
+              alt="Paktika"></div>
+          <div class="flip-card-back">
+            <h2>Paktika</h2>
+            <p>Mountainous and scenic province near Pakistan border.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://i.afintl.com/images/rdk9umy0/production/311590f4a0896d8b3388bc3b0b00e9c5376689d0-1170x817.jpg?rect=0,19,1170,780&w=992&h=661&q=80&fit=max&auto=format" alt="Panjshir"></div>
-        <div class="flip-card-back">
-          <h2>Panjshir</h2>
-          <p>Famous for stunning valleys and resistance history.</p>
+    <a href="provinces/panjshirSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://i.afintl.com/images/rdk9umy0/production/311590f4a0896d8b3388bc3b0b00e9c5376689d0-1170x817.jpg?rect=0,19,1170,780&w=992&h=661&q=80&fit=max&auto=format"
+              alt="Panjshir"></div>
+          <div class="flip-card-back">
+            <h2>Panjshir</h2>
+            <p>Famous for stunning valleys and resistance history.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/92299293_2822599604514902_6326693805776961536_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CCZ1GOpbuwYQ7kNvwGFqqg9&_nc_oc=AdkLRQv21LFkZSZr81E-Npqk7gZgIvkA6qszq5QEliNRbsH4SayDIa8FFGzWTwfY96g&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=K1f4hUHkoyZ43N_qZ6Z09g&oh=00_AfeJYtl9A_K6qo18WwnWU7mIBNtjDMFdSU3f62Dpx8DsBA&oe=690CFDB1" alt="Parwan"></div>
-        <div class="flip-card-back">
-          <h2>Parwan</h2>
-          <p>Home to Bagram airbase, beautiful landscapes, and rivers.</p>
+    <a href="provinces/parwanSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://scontent.fkbl14-1.fna.fbcdn.net/v/t1.6435-9/92299293_2822599604514902_6326693805776961536_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=CCZ1GOpbuwYQ7kNvwGFqqg9&_nc_oc=AdkLRQv21LFkZSZr81E-Npqk7gZgIvkA6qszq5QEliNRbsH4SayDIa8FFGzWTwfY96g&_nc_zt=23&_nc_ht=scontent.fkbl14-1.fna&_nc_gid=K1f4hUHkoyZ43N_qZ6Z09g&oh=00_AfeJYtl9A_K6qo18WwnWU7mIBNtjDMFdSU3f62Dpx8DsBA&oe=690CFDB1"
+              alt="Parwan"></div>
+          <div class="flip-card-back">
+            <h2>Parwan</h2>
+            <p>Home to Bagram airbase, beautiful landscapes, and rivers.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://alchetron.com/cdn/samangan-province-18298d8d-cd93-46e3-b389-7b683cb3d7d-resize-750.jpg" alt="Samangan"></div>
-        <div class="flip-card-back">
-          <h2>Samangan</h2>
-          <p>Rich in Buddhist heritage and historical caves.</p>
+    <a href="provinces/samanganSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://alchetron.com/cdn/samangan-province-18298d8d-cd93-46e3-b389-7b683cb3d7d-resize-750.jpg"
+              alt="Samangan"></div>
+          <div class="flip-card-back">
+            <h2>Samangan</h2>
+            <p>Rich in Buddhist heritage and historical caves.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Balkhab.jpg" alt="Sar-e-Pul"></div>
-        <div class="flip-card-back">
-          <h2>Sar-e-Pul</h2>
-          <p>Fertile valleys with a mix of ethnic cultures.</p>
+    <a href="provinces/sarepulSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Balkhab.jpg"
+              alt="Sar-e-Pul"></div>
+          <div class="flip-card-back">
+            <h2>Sar-e-Pul</h2>
+            <p>Fertile valleys with a mix of ethnic cultures.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZjqENkIus4d8BTkZNUSD-6UTrnuHpF0RWJg&s" alt="Takhar"></div>
-        <div class="flip-card-back">
-          <h2>Takhar</h2>
-          <p>Known for rivers, agriculture, and historical ruins.</p>
+    <a href="provinces/takharSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZjqENkIus4d8BTkZNUSD-6UTrnuHpF0RWJg&s"
+              alt="Takhar"></div>
+          <div class="flip-card-back">
+            <h2>Takhar</h2>
+            <p>Known for rivers, agriculture, and historical ruins.</p>
+          </div>
         </div>
       </div>
-    </div>
-
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://pbs.twimg.com/media/DAg_3v3W0AAyuvt.jpg" alt="Uruzgan"></div>
-        <div class="flip-card-back">
-          <h2>Uruzgan</h2>
-          <p>Mountainous and remote province, mostly rural.</p>
+    </a>
+    <a href="provinces/uruzganSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://pbs.twimg.com/media/DAg_3v3W0AAyuvt.jpg" alt="Uruzgan"></div>
+          <div class="flip-card-back">
+            <h2>Urozgan</h2>
+            <p>Mountainous and remote province, mostly rural.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://8am.media/eng/wp-content/uploads/2022/03/maidan-wardak-1.jpg" alt="Wardak"></div>
-        <div class="flip-card-back">
-          <h2>Wardak (Maidan Wardak)</h2>
-          <p>Hilly province with forests, agriculture, and tribal life.</p>
+    <a href="provinces/wardakSubPage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img src="https://8am.media/eng/wp-content/uploads/2022/03/maidan-wardak-1.jpg"
+              alt="Wardak"></div>
+          <div class="flip-card-back">
+            <h2>Wardak (Maidan Wardak)</h2>
+            <p>Hilly province with forests, agriculture, and tribal life.</p>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
 
-    <div class="flip-card">
-      <div class="flip-card-inner">
-        <div class="flip-card-front"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Alexander%27s_castle_still_has_military_uses_in_Afghanistan_DVIDS289091.jpg/500px-Alexander%27s_castle_still_has_military_uses_in_Afghanistan_DVIDS289091.jpg" alt="Zabul"></div>
-        <div class="flip-card-back">
-          <h2>Zabul</h2>
-          <p>Desert and mountainous province with historical forts.</p>
+    <a href="provinces/zabulSubpage.html" class="flip-card-link">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front"><img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Alexander%27s_castle_still_has_military_uses_in_Afghanistan_DVIDS289091.jpg/500px-Alexander%27s_castle_still_has_military_uses_in_Afghanistan_DVIDS289091.jpg"
+              alt="Zabul"></div>
+          <div class="flip-card-back">
+            <h2>Zabul</h2>
+            <p>Desert and mountainous province with historical forts.</p>
+          </div>
         </div>
       </div>
-    </div>
-
+    </a>
   </div>
 
-  <!-- 🦶 Footer -->
+  <!-- Footer -->
   <footer>
-    <p>© 2025 Explore Afghanistan | Designed with ❤️ by Mahfoza</p>
+    <p>© 2025 Explore Afghanistan | Designed by Mahfoza Sultani</p>
     <p><a href="#">Back to Top</a></p>
   </footer>
+  <!-- <script src="../components/footer/footer.js"></script> -->
+  <!-- <script src="./components/header/header.js"></script> -->
+
 
 </body>
 
