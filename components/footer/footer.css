@@ -1,16 +1,107 @@
-   footer {
-       background-color: #2c3e50;
-       color: white;
-       text-align: center;
-       padding: 1rem;
-       font-size: 0.9rem;
-   }
+/* ===== Footer Base ===== */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    border-top: 2px solid #16a085;
+    position: relative;
+}
 
-   footer a {
-       color: #ffca28;
-       text-decoration: none;
-   }
+/* ===== Footer Buttons Section ===== */
+.footer-buttons {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
 
-   footer a:hover {
-       text-decoration: underline;
-   }
+/* ===== Back to Home Button ===== */
+.home-btn {
+    /* background: linear-gradient(135deg, #27ae60, #C79F7B); */
+    color: white;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #16a085;
+    transition: all 0.3s ease;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25); */
+}
+
+.home-btn:hover {
+    /* background: linear-gradient(135deg, #C79F7B, #27ae60); */
+    transform: translateY(-3px);
+}
+
+/* ===== Floating Back to Top Button ===== */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 55px;
+    height: 55px;
+    background: linear-gradient(135deg, #2c3e50, #27ae60, #C79F7B);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.4rem;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.4s ease;
+    z-index: 1000;
+}
+
+/* ===== Show State ===== */
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    animation: pulse 2s infinite;
+}
+
+/* ===== Hover Effect ===== */
+.back-to-top:hover {
+    transform: translateY(-5px) scale(1.1);
+    background: linear-gradient(135deg, #2c3e50, #27ae60, #C79F7B);
+    animation: none;
+}
+
+/* ===== Click Effect ===== */
+.back-to-top:active {
+    transform: scale(0.95);
+}
+
+/* ===== Pulse Animation ===== */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.6);
+    }
+
+    70% {
+        box-shadow: 0 0 0 12px rgba(39, 174, 96, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+    }
+}
+
+/* ===== Responsive (Mobile Friendly) ===== */
+@media (max-width: 600px) {
+    .home-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .back-to-top {
+        width: 45px;
+        height: 45px;
+        font-size: 1.2rem;
+    }
+}

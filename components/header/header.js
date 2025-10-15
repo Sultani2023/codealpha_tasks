@@ -12,16 +12,32 @@ class Header extends HTMLElement {
 
     // Minimal nav HTML
     this.innerHTML = `
-      <nav>
-        <h1>Explore Afghanistan</h1>
-        <ul>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
+<nav>
+  <h1>Explore Afghanistan</h1>
+
+  <div class="menu-toggle" id="menu-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <ul id="nav-links">
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="#">About</a></li>
+    <li><a href="#">Services</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+
+
     `;
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('active');
+    });
   }
 }
 
