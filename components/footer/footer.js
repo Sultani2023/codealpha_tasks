@@ -7,7 +7,7 @@ class Footer extends HTMLElement {
     // Add external CSS for footer
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '/components/footer/footer.css';
+    link.href = '../components/footer/footer.css';
     document.head.appendChild(link);
 
     // Insert footer HTML
