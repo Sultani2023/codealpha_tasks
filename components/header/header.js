@@ -22,8 +22,8 @@ class Header extends HTMLElement {
   </div>
 
   <ul id="nav-links">
-    <li><a href="./index.html">Home</a></li>
-    <li><a href="./about.html">About</a></li>
+    <li><a href="../index.html">Home</a></li>
+    <li><a href="../about.html">About</a></li>
     <li><a href="./services.html">Services</a></li>
     <li><a href="./contactUs.html">Contact</a></li>
   </ul>
