@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Explore Afghanistan</title>
+  <script src="../components/header/header.js" defer></script>
+  <script src="../components/footer/footer.js" defer></script>
+  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <header-component></header-component>
+
+  <header class="page-header">
+    <h1>Contact Us</h1>
+    <p>We’d love to hear from you!</p>
+  </header>
+
+  <section class="content">
+    <h2>Get in Touch</h2>
+    <p>Have a question, suggestion, or collaboration idea? Fill out the form below and our team will get back to you as soon as possible.</p>
+
+    <form id="contactForm" action="https://formspree.io/f/xpwynzvv" method="POST" class="contact-form">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <h2>Our Location</h2>
+    <iframe src="https://www.google.com/maps?q=Kabul,Afghanistan&output=embed" width="100%" height="300" allowfullscreen="" loading="lazy"></iframe>
+  </section>
+
+  <footer-component></footer-component>
+
+  <script>
+    const form = document.getElementById("contactForm");
+
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          alert("✅ Your message has been sent successfully!");
+          form.reset();
+        } else {
+          alert("❌ There was a problem sending your message. Please try again later.");
+        }
+      } catch (error) {
+        alert("⚠️ Network error. Please check your connection and try again.");
+      }
+    });
+  </script>
+</body>
+</html>

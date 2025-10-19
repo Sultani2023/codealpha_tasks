@@ -7,7 +7,7 @@ class Header extends HTMLElement {
     // Add external CSS for the header
     const link = document.createElement('link');
     link.rel = 'stylesheet';
-    link.href = '../components/header/header.css';
+    link.href = '/components/header/header.css';
     document.head.appendChild(link);
 
     // Minimal nav HTML
@@ -23,9 +23,9 @@ class Header extends HTMLElement {
 
   <ul id="nav-links">
     <li><a href="../index.html">Home</a></li>
-    <li><a href="#">About</a></li>
-    <li><a href="#">Services</a></li>
-    <li><a href="#">Contact</a></li>
+    <li><a href="../about.html">About</a></li>
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../contactUs.html">Contact</a></li>
   </ul>
 </nav>
 
